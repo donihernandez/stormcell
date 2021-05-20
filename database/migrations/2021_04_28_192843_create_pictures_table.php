@@ -14,7 +14,7 @@ class CreatePicturesTable extends Migration
     public function up()
     {
         Schema::create('pictures', function (Blueprint $table) {
-            $table->foreignId('image_id')->constrained();
+            $table->foreignId('image_id')->constrained()->cascadeOnDelete();
             $table->integer('picture_id');
             $table->string('picture_type');
         });

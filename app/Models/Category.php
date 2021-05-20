@@ -10,6 +10,12 @@ class Category extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = [
+      'name',
+      'categorized_id',
+      'categorized_type'
+    ];
+
     public function categorized() {
         return $this->morphTo();
     }

@@ -10,7 +10,16 @@ class Image extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public function picture() {
-        return $this->morphTo();
+    protected $fillable = [
+        'name',
+        'url'
+    ];
+
+    public function posts() {
+        return $this->morphedByMany(Post::class, 'pictures');
+    }
+
+    public function products() {
+        return $this->morphedByMany(Product::class, 'pictures');
     }
 }

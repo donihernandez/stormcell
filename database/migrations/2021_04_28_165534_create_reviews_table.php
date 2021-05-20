@@ -17,6 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained();
             $table->float('rate');
+            $table->string('description');
             $table->timestamps();
             $table->softDeletes();
         });
